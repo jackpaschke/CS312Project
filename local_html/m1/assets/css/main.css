@@ -6,15 +6,15 @@ li {
 li a {
 	text-decoration: none;
 	padding: 10px 20px;
-	color: #A9A9A9;
+	color: #F7F7F2;
 }
 
 li a:hover {
-	background-color: #2703A6;
+	background-color: #06070E;
 }
 
 ul {
-	background-color: #F2B705;
+	background-color: #2703A6;
 	height: 30px;
 }
 
@@ -30,4 +30,5 @@ main {
 	width: 800px;
 	margin: auto;
 }
+
 
