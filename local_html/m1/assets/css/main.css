@@ -3,6 +3,21 @@ li {
 	display: inline-block;
 }
 
+li a {
+	text-decoration: none;
+	padding: 10px 20px;
+	color: #A9A9A9;
+}
+
+li a:hover {
+	background-color: #2703A6;
+}
+
+ul {
+	background-color: #F2B705;
+	height: 30px;
+}
+
 a {
       text-decoration:none;
 }
@@ -10,3 +25,9 @@ a {
 a:hover {
 	background-color: #F7F7F2
 }
+
+main {
+	width: 800px;
+	margin: auto;
+}
+
