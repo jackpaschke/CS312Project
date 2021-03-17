@@ -15,6 +15,6 @@ class Controller_Main extends Controller_Template{
 	{
 		$this->template->title= 'About Page';
         	$this->template->content=View::forge('m1/index/about');
-		$this->template->css = "main.css";
+		$this->template->css = "about.css";
 	}
 }
