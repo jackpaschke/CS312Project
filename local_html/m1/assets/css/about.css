@@ -5,8 +5,12 @@ li {
 
 li a {
 	text-decoration: none;
-	padding: 10px 20px;
+	text-align: center;
+	font-size: 20px;
+	padding: 20px 30px;
 	color: #F7F7F2;
+	float: left;
+    font-size: 25px;
 }
 
 li a:hover {
@@ -15,11 +19,11 @@ li a:hover {
 
 ul {
 	background-color: #2703A6;
-	height: 30px;
+	display: flex;
 }
 
 a {
-      text-decoration:none;
+  text-decoration:none;
 }
 
 a:hover {
@@ -27,15 +31,34 @@ a:hover {
 }
 
 main {
-	width: 800px;
 	margin: auto;
+	width: 99%;
+}
+footer{
+	width: 99%;
+	background-color: grey;
+	position: fixed;
+	bottom: 0;
+	height: 80px;
+	text-align: center;
 }
 
-
 .column {
-    float: left;
-    width: 33.33%;
-  }
+  float: left;
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  text-align:center;
+}
+
+.container {
+  padding: 16px;
+}
   
   /* Clear floats after the columns */
   .row:after {
