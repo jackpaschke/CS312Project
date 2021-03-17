@@ -11,7 +11,7 @@
 	<h1><?php echo$title; ?></h1>
         <ul>
             <li><a href="https://cs.colostate.edu:4444/~mwebbj/m1/index/main">Home</a></li>
-            <li><a href="https://cs.colostate.edu:4444/~mwebbj/m1/index/about">About</a></li>
+            <li><a href="https://cs.colostate.edu:4444/~mwebbj/m1/about">About</a></li>
             <li><a href="https://cs.colostate.edu:4444/~mwebbj/m1/index/ccg">Color Coordinate Generation</a></li>
         </ul>
     </header>
