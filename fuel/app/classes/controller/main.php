@@ -14,7 +14,7 @@ class Controller_Main extends Controller_Template{
 	public function action_about()
 	{
 		$this->template->title= 'About Page';
-        	$this->template->content=View::forge('m1/index/about');
+        	$this->template->content=View::forge('m1/about.php');
 		$this->template->css = "about.css";
 	}
 }
