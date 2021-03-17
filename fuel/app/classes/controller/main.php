@@ -8,13 +8,19 @@ class Controller_Main extends Controller_Template{
 		$this->template->title= 'Home Page';
         	$this->template->content=View::forge('m1/index');
 		$this->template->css = "main.css";
-		//return Response::forge(View::forge('m1/index'));
 	}
 
 	public function action_about()
 	{
 		$this->template->title= 'About Page';
 		$this->template->css = "about.css";
-        	$this->template->content=View::forge('m1/about');
-	}}
+        $this->template->content=View::forge('m1/about');
+	}
+
+	// public function action_color()
+	// {
+	// 	$this->template->title= 'Color Coordinate Generator';
+	// 	$this->template->css = "about.css";
+    //     $this->template->content=View::forge('m1/colorCoordGenerator');
+	// }
 }
