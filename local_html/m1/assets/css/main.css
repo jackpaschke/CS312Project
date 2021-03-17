@@ -16,6 +16,8 @@ li a:hover {
 ul {
 	background-color: #2703A6;
 	height: 30px;
+	padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 a {
@@ -30,5 +32,11 @@ main {
 	width: 800px;
 	margin: auto;
 }
-
-
+footer{
+	width: 99%;
+	background-color: grey;
+	position: fixed;
+	bottom: 0;
+	height: 80px;
+	text-align: center;
+}
