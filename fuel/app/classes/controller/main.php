@@ -21,6 +21,6 @@ class Controller_Main extends Controller_Template{
 	// {
 	// 	$this->template->title= 'Color Coordinate Generator';
 	// 	$this->template->css = "about.css";
-    //     $this->template->content=View::forge('m1/colorCoordGenerator');
+    //     $this->template->content=View::forge('m1/ccg');
 	// }
 }
