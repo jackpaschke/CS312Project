@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1> 
-            <img src="https://cs.colostate.edu:4444/~eileenr/m1/assets/img/nemotech.png" width="190"  title="Logo of a company" alt="Logo of a company" />
+            <img src="https://cs.colostate.edu:4444/~eileenr/m1/img/nemotech.png" width="190"  title="Logo of a company" alt="Logo of a company" />
             <?php echo$title; ?> 
         </h1>
     </header>
