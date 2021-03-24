@@ -81,7 +81,6 @@
                 }
             }// End of POST request
             else{
-                echo "Get request has been made <br>";
                 formBuild(0);
             }
         ?>
