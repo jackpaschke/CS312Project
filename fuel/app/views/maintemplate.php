@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1> 
-            <img src="https://cs.colostate.edu:4444/~eileenr/m1/assets/img/nemotech.png" width="190"  title="Logo of a company" alt="Logo of a company" />
+            <?php echo Asset::img('nemotech.png', array('style' => 'width: 190px')) ?>
             <?php echo$title; ?> 
         </h1>
     </header>
