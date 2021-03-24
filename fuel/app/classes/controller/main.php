@@ -17,10 +17,10 @@ class Controller_Main extends Controller_Template{
         $this->template->content=View::forge('m1/about');
 	}
 
-	// public function action_color()
-	// {
-	// 	$this->template->title= 'Color Coordinate Generator';
-	// 	$this->template->css = "about.css";
-    //     $this->template->content=View::forge('m1/ccg');
-	// }
+	public function action_color()
+	{
+		$this->template->title= 'Color Coordinate Generator';
+		$this->template->css = "about.css";
+        $this->template->content=View::forge('m1/ccg');
+	}
 }
