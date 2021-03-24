@@ -17,7 +17,7 @@
         <ul>
             <li><a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main">Home</a></li>
             <li><a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/about">About</a></li>
-            <li><a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/ccg">Color Coordinate Generation</a></li>
+            <li><a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/color">Color Coordinate Generation</a></li>
         </ul>
     </nav>
     <main>  
