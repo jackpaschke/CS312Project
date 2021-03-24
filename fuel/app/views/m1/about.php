@@ -4,9 +4,9 @@
             <div class="column">
                 <div class="card">
                     <div class="container">
-                        <img src="" alt="Michael Webb">
+                        <?php echo Asset::img('michael.jpeg', array('style' => 'height: 300px')) ?>
                         <h2>Michael Webb</h2>
-                        <p>Biography</p>
+                        <p>Michael is a senior computer science major at CSU. He enjoys snowboarding and game design.</p>
                     </div>
                 </div>
             </div>
