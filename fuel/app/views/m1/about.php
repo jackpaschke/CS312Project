@@ -13,7 +13,7 @@
             <div class="column">
                 <div class="card">
                     <div class="container">
-                        <img src="" alt="Jake Paschke">
+                    <?php echo Asset::img('jack.jpeg', array('style' => 'height: 300px')) ?>
                         <h2>Jake Paschke</h2>
                         <p>Biography</p>
                     </div>
