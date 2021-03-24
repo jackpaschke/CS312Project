@@ -3,47 +3,55 @@
 
 body{
 	font-family: 'prox-regular', sans-serif;
+	 background-color: #f4f4f5;
+	text-align: center;
 }
 
 h1, h2, h3,h4,h5, h6{
 	font-family: 'factoria-book', sans-serif;
 }
 
-li {
-	list-style-type: none;
-	display: inline-block;
+.image{
+	float:left;
 }
-
-li a {
-	text-decoration: none;
+.container img{
+	float: center;
+}
+.topnav {
+    background-color: #2f67c0ea;
+    overflow: hidden;
+}
+.logo h3{
+	float:left;
+	color: #E8EEF1;
 	text-align: center;
-	font-size: 20px;
-	padding: 20px 30px;
-	color: #F7F7F2;
-	float: left;
-    font-size: 25px;
+	margin: 0px;
+	padding: 36px;
+	text-decoration: none;
+	font-size: 24px;
 }
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 40px;
+  text-decoration: none;
+  font-size: 20px;
 
-li a:hover {
-	background-color: #06070E;
 }
-
-ul {
-	background-color: #2703A6;
-	display: flex;
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
-
-a {
-  text-decoration:none;
+img{
+	float:center;
 }
-
-a:hover {
-	background-color: #F7F7F2
-}
-
 main {
 	margin: auto;
 	width: 99%;
+}
+header{
+	text-align: center;
 }
 footer{
 	width: 99%;
@@ -53,27 +61,23 @@ footer{
 	height: 80px;
 	text-align: center;
 }
-
 .column {
   float: left;
-  width: 30%;
+  width: 32%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
   text-align:center;
+  background-color:white;
 }
-
 .container {
   padding: 16px;
 }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+ }
