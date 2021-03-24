@@ -3,52 +3,53 @@
 
 body{
 	font-family: 'prox-regular', sans-serif;
+	background-color: #f4f4f5;
+	text-align: center;
 }
 
 h1, h2, h3,h4,h5, h6{
 	font-family: 'factoria-book', sans-serif;
 }
 
-li {
-	list-style-type: none;
-	display: inline-block;
+img{
+	float:left;
 }
-
-li a {
-	text-decoration: none;
+.topnav {
+    background-color: #2f67c0ea;
+    overflow: hidden;
+}
+.logo h3{
+	float:left;
+	color: #E8EEF1;
 	text-align: center;
+	margin: 0px;
+	padding: 36px;
+	text-decoration: none;
+	font-size: 24px;
+}
+.topnav a {
+	float: right;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 40px;
+	text-decoration: none;
 	font-size: 20px;
-	padding: 20px 30px;
-	color: #F7F7F2;
-	float: left;
-    font-size: 25px;
 }
-
-li a:hover {
-	background-color: #06070E;
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
-
-ul {
-	background-color: #2703A6;
-	display: flex;
-}
-
-a {
-      text-decoration:none;
-}
-
-a:hover {
-	background-color: #F7F7F2
-}
-
 main {
 	margin: auto;
 	width: 99%;
 }
+header{
+	text-align: center;
+}
 footer{
-	width: 99%;
-	background-color: grey;
+	background-color: #838282;
 	position: fixed;
+	width: 99%;
 	bottom: 0;
 	height: 80px;
 	text-align: center;
