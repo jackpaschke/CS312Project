@@ -1,9 +1,9 @@
 <body>
 	<main>
 		
-		<p>
-		This is a basic welcome information page for a fictitious company. 
-		</p>
+		<h2>
+		Welcome to Nemo Tech! Here you can read more about our team menbers and access our web applications.
+</h2>
 	
 	</main>
 
