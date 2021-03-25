@@ -1,16 +1,11 @@
-<body>
-    <main>
-    <style>
-.error {color: red;}
-</style>
+<html>
+<header>
+<h1>Nemo Tech inc.</h1>
+<?php echo Asset::img('nemotechgs.png', array('style' => 'width: 190px')) ?>
+</header>
+ <body>
 <?php
-$rowCol = $numColors = "";
-$color = array('');
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-
-    if ( $_POST['rowCol'] > 0 && $_POST['rowCol'] < 27 && $_POST['numColors'] > 0 && $_POST['numColors'] < 11){ //form validation parameters
-        echo "<style>
+ echo "<style>
             td {
                 width: 20px;
                 height: 20px;
@@ -24,13 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 }
 
                     </style>"; //Style for color coordinate table
-        $rowCol = $_POST['rowCol'];
-        $numColors = $_POST['numColors'];
+        $rowCol = $_POST['printRowCol'];
+        $numColors = $_POST['printNumColors'];
         $colors = array('red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'brown', 'black', 'grey');
         echo'<form method="post" action="print.php">';
         echo "<input type = 'hidden' name = 'printRowCol' value ='$rowCol'>";
         echo "<input type = 'hidden' name = 'printNumColors' value = '$numColors'>";
-        echo "<table style='width:100%'>";
+        echo "<table style='width:50%'>";
         for ($i = 0; $i < $numColors; $i++){
             echo "<tr><td style='width:20%'>";
             echo "<select id='color$i' name='color'>";
@@ -59,31 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "</table>";
         echo '<input type="submit" name="submit" value="Submit">';
         echo "</form>";        
-    }
-    else{
-        echo'<form method="post" action="color.php">
-        <p style = "color: red;">Number or rows and columns out of range must be [1-26}</p>
-        # of Rows and Columns: <input type="text" name="rowCol" required>
-          <br><br>
-        <p style = "color: red;">Number of colors must be [1-10]</p>
-        # of Colors: <input type="text" name="numColors" required>
-          <br><br>
-          <input type="submit" name="submit" value="Submit"> 
-          </from>';
-    }
-}
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-    echo'<form method="post" action="color.php">
-# of Rows and Columns: <input type="text" name="rowCol" required>
-  <br><br>
-# of Colors: <input type="text" name="numColors" required>
-  <br><br>
-  <input type="submit" name="submit" value="Submit"> 
-  </from>';
-}
-    
-?>
-
-    </main>
-</body>
+    ?>
+ </body>
+ </html> 

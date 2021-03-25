@@ -12,7 +12,7 @@
     </div>
     <div class="topnav">
         <div class="logo">
-            <h3>Nemo Technologoes</h3>
+            <h3>Nemo Technologies</h3>
         </div>
         <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/color">Color Coordinate Generation</a>
         <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/about">About</a>

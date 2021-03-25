@@ -19,8 +19,13 @@ class Controller_Main extends Controller_Template{
 
 	public function action_color()
 	{
-		$this->template->title= 'Color Coordinate Generator';
-		$this->template->css = "about.css";
-        $this->template->content=View::forge('m1/ccg');
+	$this->template->title= 'Color Coordinate Generator';
+	$this->template->css = "about.css";
+    $this->template->content=View::forge('m1/color');
+	}
+
+	public function action_print()
+	{
+		return View::forge('m1/print');
 	}
 }
