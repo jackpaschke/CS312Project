@@ -7,19 +7,20 @@
 </head>
 
 <body>
+	<div class="image">
+        <?php echo Asset::img('nemotech.png', array('style' => 'width: 190px')) ?>
+    </div>
+    <div class="topnav">
+        <div class="logo">
+            <h3>Nemo Technologoes</h3>
+        </div>
+        <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/color">Color Coordinate Generation</a>
+        <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/about">About</a>
+        <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main">Home</a>
+    </div>
     <header>
-        <h1> 
-            <?php echo Asset::img('nemotech.png', array('style' => 'width: 190px')) ?>
-            <?php echo$title; ?> 
-        </h1>
+        <h1><?php echo$title; ?></h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main">Home</a></li>
-            <li><a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/about">About</a></li>
-            <li><a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/color">Color Coordinate Generation</a></li>
-        </ul>
-    </nav>
     <main>  
 	    <?php echo $content ?>
     </main>
