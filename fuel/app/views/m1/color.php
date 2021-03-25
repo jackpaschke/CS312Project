@@ -83,13 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
   </from>';
 }
     
-?>
-</br>
-</br>
-</br>
-</br>
-</br>
-       
+?>       
 
     </main>
 </body>
