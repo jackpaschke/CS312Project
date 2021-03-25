@@ -23,9 +23,9 @@
             <div class="column">
                 <div class="card">
                     <div class="container">
-                        <img src="" alt="Eileen Rice">
+                        <?php echo Asset::img('eileen.jpg', array('style' => 'height: 300px')) ?>
                         <h2>Eileen Rice</h2>
-                        <p>Biography</p>
+                        <p>Eileen is a junior in computer science with a computer science concentration. She is interested in software development and making an impact with her work.</p>
                     </div>
                 </div>
             </div>
