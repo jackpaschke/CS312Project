@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "</tr>";
         }
         echo "</table>";
-        echo '<input type="submit" name="submit" value="Submit">';
+        echo '<input type="submit" name="submit" value="Print">';
         echo "</form>";        
     }
     else{
