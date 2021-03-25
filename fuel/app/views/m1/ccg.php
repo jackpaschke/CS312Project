@@ -1,7 +1,4 @@
 <body>
-    <header>
-        <h1>Color Coordinate Generator</h1>
-    </header>
     <main>
         <?php
             function formBuild($err){ // Error printed on form validation failure
