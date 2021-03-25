@@ -56,9 +56,9 @@ header{
 footer{
 	width: 99%;
 	background-color: grey;
-	position: fixed;
+	position: static;
 	bottom: 0;
-	height: 80px;
+	height: 120px;
 	text-align: center;
 }
 .column {
