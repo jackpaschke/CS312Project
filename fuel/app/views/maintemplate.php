@@ -2,7 +2,7 @@
 	<title><?php echo$title; ?> </title>
 	<meta charset="utf-8"></meta>
 	<meta name="author" content="Michael Webb"></meta>
-	<meta name="description" content="Fuel Template for M1"></meta>
+	<meta name="description" content="Fuel Template for M2"></meta>
 	<?php echo Asset::css($css) ?>
 </head>
 
@@ -14,9 +14,9 @@
         <div class="logo">
             <h3>Nemo Technologies</h3>
         </div>
-        <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/color">Color Coordinate Generation</a>
-        <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main/about">About</a>
-        <a href="https://cs.colostate.edu:4444/~eileenr/m1/index/main">Home</a>
+        <a href="https://cs.colostate.edu:4444/~eileenr/m2/index/main/color">Color Coordinate Generation</a>
+        <a href="https://cs.colostate.edu:4444/~eileenr/m2/index/main/about">About</a>
+        <a href="https://cs.colostate.edu:4444/~eileenr/m2/index/main">Home</a>
     </div>
     <header>
         <h1><?php echo$title; ?></h1>
