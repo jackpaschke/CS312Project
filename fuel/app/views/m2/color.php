@@ -46,6 +46,7 @@
                     width: 20px;
                     height: 20px;
                     border: 1px solid black;
+                    text-align: center;
                     }
                 table {
                     border-color: black;
@@ -78,8 +79,8 @@
                         }else{
                             echo "<input type='radio' name='colorSelect' id='radio$d' value='$d'>";
                         }
-                        echo "</td><td style='width:80%' id='longRow$d'></td></tr>";
-                        echo "<input type='hidden' name='longRowForm$d' id='longRowForm$d' value=' '>";
+                        echo "</td><td style='width:80%' id='dataRow$d'></td></tr>";
+                        echo "<input type='hidden' name='dataRowForm$d' id='dataRowForm$d' value=' '>";
                     }
                     echo "</table>";
                     
@@ -97,7 +98,7 @@
                         for ($a = 0; $a < $rowCol; $a++){
                             $cetter = $cetters[$a];
                             $number = $d+1;
-                            echo "<td name='$cetter$number' id='$d-$a' onclick='mainClick($d,$a)'></td>";
+                            echo "<td name='$cetter$number' id='$d-$a' onclick='gridClick($d,$a)'></td>";
                         }
                         echo "</tr>";
                     }
@@ -124,17 +125,20 @@
 
             <?php for ($a = 0; $a < $numColor; $a++){?>
                 selected.push(parseInt($("#color<?=$a;?> option:selected").val()));
-            <?php } ?>
+            <?php } 
+            ?>
             
             <?php for ($b = 0; $b < 10; $b++){?>
                 if (selected.includes(<?=$b;?>)){
                     $("select option[value=<?=$b;?>]").prop("disabled", true);
                 }
-            <?php } ?>
+            <?php } 
+            ?>
 
             <?php for ($c = 0; $c < $numColor; $c++){?>
                 $("#color<?=$c;?> option:selected").prop("disabled", false);
-            <?php } ?>
+            <?php } 
+            ?>
 
             $(function(){
                 <?php
@@ -151,34 +155,39 @@
                         var selected = [];
                         <?php for ($a = 0; $a < $numColor; $a++){?>
                             selected.push(parseInt($("#color<?=$a;?> option:selected").val()));
-                        <?php } ?>
+                        <?php } 
+                        ?>
                         
                         <?php for ($b = 0; $b < 10; $b++){?>
                             if (selected.includes(<?=$b;?>)){
                                 $("select option[value=<?=$b;?>]").prop("disabled", true);
                             }
-                        <?php } ?>
+                        <?php } 
+                        ?>
 
                         <?php for ($c = 0; $c < $numColor; $c++){?>
                             $("#color<?=$c;?> option:selected").prop("disabled", false);
-                        <?php } ?>
+                        <?php } 
+                        ?>
                     });
-                <?php } ?>
+                <?php } 
+                ?>
             });
-            function mainClick(x,y){
+            function gridClick(x,y){
                 var radioIndex = ($('input[name = colorSelect]:checked').val());
                 var selectedColor = ($("#color" + radioIndex).val());
-                $("#" + x + "-" + y).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + radioIndex);
+                $( "#" + x + "-" + y ).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + radioIndex);
 
-                for (let i = 0; i < 10; i++){
+                for (let i = 0; i < 10;i++){
                     var values = [];
                     $(".radioCheck" + i).each(function(){
                         values += $(this).attr("name");
                         values += ", ";
-                    });
+                    }
+                    );
                     
-                    $('#longRow' + i).html(values);
-                    $('#longRowForm' + i).attr('value', values);
+                    $('#dataRow' + i).html(values);
+                    $('#dataRowForm' + i).attr('value', values);
                 }
             }
         </script>
