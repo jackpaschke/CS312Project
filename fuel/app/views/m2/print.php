@@ -1,7 +1,7 @@
 <html>
 <header>
 <h1>Nemo Tech inc.</h1>
-<?php echo Asset::img('nemotechgs.png', array('style' => 'width: 190px')) ?>
+<?php echo Asset::img('nemotechgs.png', array('style' => 'width: 190px;' )) ?>
 </header>
  <body>
  <main>

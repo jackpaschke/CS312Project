@@ -17,7 +17,7 @@
         .black {background-color: black;}
     </style>
         <?php
-            $cetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
+            $letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
             $numColor = $rowCol = 0;
             echo Asset::js(array("https://code.jquery.com/jquery-3.6.0.min.js"));
             
@@ -83,12 +83,11 @@
                         echo "<input type='hidden' name='dataRowForm$d' id='dataRowForm$d' value=' '>";
                     }
                     echo "</table>";
-                    
                     echo "<table>";
                     echo "<tr><td></td>";
-                    $cetters = range('A', 'Z');
+                    $letters = range('A', 'Z');
                     for ($a = 0; $a < $rowCol; $a++){
-                        echo "<td>$cetters[$a]</td>";
+                        echo "<td>$letters[$a]</td>";
                     }
 
                     for ($d = 0; $d < $rowCol; $d++){
@@ -96,7 +95,7 @@
                         $val = $d+1;
                         echo "<td>$val</td>";
                         for ($a = 0; $a < $rowCol; $a++){
-                            $cetter = $cetters[$a];
+                            $cetter = $letters[$a];
                             $number = $d+1;
                             echo "<td name='$cetter$number' id='$d-$a' onclick='gridClick($d,$a)'></td>";
                         }
