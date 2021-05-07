@@ -17,7 +17,7 @@
         .black {background-color: black;}
     </style>
         <?php
-            $letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
+            $cetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
             $numColor = $rowCol = 0;
             echo Asset::js(array("https://code.jquery.com/jquery-3.6.0.min.js"));
             
@@ -83,11 +83,12 @@
                         echo "<input type='hidden' name='dataRowForm$d' id='dataRowForm$d' value=' '>";
                     }
                     echo "</table>";
+                    
                     echo "<table>";
                     echo "<tr><td></td>";
-                    $letters = range('A', 'Z');
+                    $cetters = range('A', 'Z');
                     for ($a = 0; $a < $rowCol; $a++){
-                        echo "<td>$letters[$a]</td>";
+                        echo "<td>$cetters[$a]</td>";
                     }
 
                     for ($d = 0; $d < $rowCol; $d++){
@@ -95,7 +96,7 @@
                         $val = $d+1;
                         echo "<td>$val</td>";
                         for ($a = 0; $a < $rowCol; $a++){
-                            $cetter = $letters[$a];
+                            $cetter = $cetters[$a];
                             $number = $d+1;
                             echo "<td name='$cetter$number' id='$d-$a' onclick='gridClick($d,$a)'></td>";
                         }
@@ -118,6 +119,7 @@
             }
         ?>
         <script type='text/javascript'>
+        
             let colors = ['red','orange','yellow','green','teal','blue','purple','gray','brown','black'];
             var selected = [];
 
@@ -147,23 +149,23 @@
 
                         for (let l = 0; l < 10; l++){ // Update cell color
                             var selectedColor = ($("#color" + l).val()); // 
-                            $(".radioCheck" + l).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + l);
+                            $(".radioCheck" + l).addClass(colors[selectedColor]).addClass("radioCheck" + l);
                         }
 
                         var selected = [];
-                        <?php for ($a = 0; $a < $numColor; $a++){?>
-                            selected.push(parseInt($("#color<?=$a;?> option:selected").val()));
+                        <?php for ($a = 0; $a < $numColor; $a++){ ?>
+                            selected.push(parseInt($("#color<?=$a; ?> option:selected").val()));
                         <?php } 
                         ?>
                         
                         <?php for ($b = 0; $b < 10; $b++){?>
-                            if (selected.includes(<?=$b;?>)){
-                                $("select option[value=<?=$b;?>]").prop("disabled", true);
+                            if (selected.includes(<?=$b; ?>)){
+                                $("select option[value=<?=$b; ?>]").prop("disabled", true);
                             }
                         <?php } 
                         ?>
 
-                        <?php for ($c = 0; $c < $numColor; $c++){?>
+                        <?php for ($c = 0; $c < $numColor; $c++ ){ ?>
                             $("#color<?=$c;?> option:selected").prop("disabled", false);
                         <?php } 
                         ?>
@@ -171,19 +173,19 @@
                 <?php } 
                 ?>
             });
-            function gridClick(x,y){
+            function gridClick(x,y ){
+
                 var radioIndex = ($('input[name = colorSelect]:checked').val());
                 var selectedColor = ($("#color" + radioIndex).val());
+
                 $( "#" + x + "-" + y ).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + radioIndex);
 
                 for (let i = 0; i < 10;i++){
                     var values = [];
                     $(".radioCheck" + i).each(function(){
-                        values += $(this).attr("name");
-                        values += ", ";
+                        values += $(this).attr("name")+", ";
                     }
                     );
-                    
                     $('#dataRow' + i).html(values);
                     $('#dataRowForm' + i).attr('value', values);
                 }
