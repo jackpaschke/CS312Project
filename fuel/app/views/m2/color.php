@@ -184,10 +184,10 @@
             });
             function gridClick(x,y ){
 
-                var radioIndex = ($('input[name = colorSelect]:checked').val());
-                var selectedColor = ($("#color" + radioIndex).val());
+                var radioValue = ($('input[name = colorSelect]:checked').val());
+                var selectedColor = ($("#color" + radioValue).val());
 
-                $( "#" + x + "-" + y ).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + radioIndex);
+                $( "#" + x + "-" + y ).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + radioValue);
 
                 for (let i = 0; i < 10;i++){
                     var values = [];
