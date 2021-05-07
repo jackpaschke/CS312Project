@@ -30,7 +30,7 @@
                     $colorIndexIGuess = $_POST[$colorConcat];
                     echo"$colorArray[$colorIndexIGuess]";
                     
-                    $tempList = $_POST['longRowForm' . $i];
+                    $tempList = $_POST['dataRowForm'.$i];
                 echo "</td><td style='width:80%'>$tempList</td></tr>";
             }
             echo "</table>";
