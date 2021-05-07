@@ -21,15 +21,6 @@
             $cetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
             $numColor = $rowCol = 0;
             echo Asset::js(array("https://code.jquery.com/jquery-3.6.0.min.js"));
-            echo "
-            <script type='text/javascript'>
-            function stopDupes(){
-                let selectArray = $('color');
-                for (let i = 0; i < selectArray.length; i++){
-                    selectArray[i].selectedIndex = i;
-                }
-            }
-            </script>";
             
             function buildForm($errCode){ //Create form an validate form data
                 if ($errCode == 1){ //If data out of bounds
