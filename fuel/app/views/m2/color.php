@@ -1,5 +1,9 @@
 <html lang="en">
     
+
+</html>
+<body>
+    <main>
     <style> 
         .red {background-color: red;}
         .orange {background-color: orange;}
@@ -12,11 +16,6 @@
         .brown {background-color: brown;}
         .black {background-color: black;}
     </style>
-</html>
-
-<body>
-    <main>
-        
         <?php
             $cetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
             $numColor = $rowCol = 0;
@@ -53,6 +52,7 @@
                     border-style: solid;
                     border-width: 2px;
                     padding: 2px;
+                    margin: 10px;
                     }
                     </style>";
 
@@ -107,9 +107,8 @@
                     echo "<input type='hidden' name='test' value='b'>";
                     echo "<input type='hidden' name='numColor' value='$numColor'>";
                     echo "<input type='hidden' name='rowCol' value='$rowCol'>";
-                    echo "<input type='submit' value='Submit'>";
+                    echo "<input type='submit' value='Print'>";
                     echo "</form>";
-
                 }
                 else{
                     buildForm(1);
