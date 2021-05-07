@@ -1,5 +1,6 @@
 <html lang="en">
-    <style>
+    
+    <style> 
         .red {background-color: red;}
         .orange {background-color: orange;}
         .yellow {background-color: yellow;}
@@ -17,7 +18,7 @@
     <main>
         
         <?php
-            $letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+            $cetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
             $numColor = $rowCol = 0;
             echo Asset::js(array("https://code.jquery.com/jquery-3.6.0.min.js"));
             echo "
@@ -30,8 +31,8 @@
             }
             </script>";
             
-            function buildForm($errCode){
-                if ($errCode == 1){
+            function buildForm($errCode){ //Create form an validate form data
+                if ($errCode == 1){ //If data out of bounds
                     echo "<p>>Number of rows and columns out of range must be [1-26}</p>";
                 }
                 $self = $_SERVER["PHP_SELF"];
@@ -45,8 +46,8 @@
                 </form>";
             }
             
-            $colors = array('red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'grey', 'brown', 'black');
-            $colorKey = array( 0 => 'red', 1 =>  'orange', 2 => 'yellow', 3 => 'green', 4 => 'teal', 5 => 'blue', 6 => 'purple', 7 => 'grey', 8 => 'brown', 9 => 'black');
+            $colors = array('red','orange','yellow','green','teal','blue','purple','grey','brown','black');
+            $colorKey = array( 0 => 'red', 1 => 'orange', 2 => 'yellow', 3 => 'green', 4 => 'teal', 5 => 'blue', 6 => 'purple', 7 => 'grey', 8 => 'brown', 9 => 'black');
             
             if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 echo "<style>
@@ -69,43 +70,43 @@
                     
                     echo'<form method="post" action="print.php">';
                     echo "<table style='width:90%'>";
-                    for ($i = 0; $i < $numColor; $i++){
+                    for ($d = 0; $d < $numColor; $d++){
                         echo "<tr><td style='width:20%'>";
-                        echo "<select name='color$i' id='color$i'>";
-                            for ($j = 0; $j < 10; $j++){
-                                $colorType = $colors[$j];
-                                if ($i == $j){
-                                    echo "<option value='$j' selected>$colorType</option>";
+                        echo "<select name='color$d' id='color$d'>";
+                            for ($a = 0; $a < 10; $a++){
+                                $colorType = $colors[$a];
+                                if ($d == $a){
+                                    echo "<option value='$a' selected>$colorType</option>";
                                 }else{
-                                    echo "<option value='$j'>$colorType</option>";
+                                    echo "<option value='$a'>$colorType</option>";
                                 }
                             }   
                         echo "</select>";
-                        if ($i == 0){
-                            echo "<input type='radio' name='colorSelect' id='radio$i' value='$i' checked>";
+                        if ($d == 0){
+                            echo "<input type='radio' name='colorSelect' id='radio$d' value='$d' checked>";
                         }else{
-                            echo "<input type='radio' name='colorSelect' id='radio$i' value='$i'>";
+                            echo "<input type='radio' name='colorSelect' id='radio$d' value='$d'>";
                         }
-                        echo "</td><td style='width:80%' id='longRow$i'></td></tr>";
-                        echo "<input type='hidden' name='longRowForm$i' id='longRowForm$i' value=' '>";
+                        echo "</td><td style='width:80%' id='longRow$d'></td></tr>";
+                        echo "<input type='hidden' name='longRowForm$d' id='longRowForm$d' value=' '>";
                     }
                     echo "</table>";
                     
                     echo "<table>";
                     echo "<tr><td></td>";
-                    $letters = range('A', 'Z');
-                    for ($j = 0; $j < $rowCol; $j++){
-                        echo "<td>$letters[$j]</td>";
+                    $cetters = range('A', 'Z');
+                    for ($a = 0; $a < $rowCol; $a++){
+                        echo "<td>$cetters[$a]</td>";
                     }
 
-                    for ($i = 0; $i < $rowCol; $i++){
+                    for ($d = 0; $d < $rowCol; $d++){
                         echo "<tr>";
-                        $val = $i+1;
+                        $val = $d+1;
                         echo "<td>$val</td>";
-                        for ($j = 0; $j < $rowCol; $j++){
-                            $letter = $letters[$j];
-                            $number = $i+1;
-                            echo "<td name='$letter$number' id='$i-$j' onclick='mainClick($i,$j)'></td>";
+                        for ($a = 0; $a < $rowCol; $a++){
+                            $cetter = $cetters[$a];
+                            $number = $d+1;
+                            echo "<td name='$cetter$number' id='$d-$a' onclick='mainClick($d,$a)'></td>";
                         }
                         echo "</tr>";
                     }
@@ -127,47 +128,48 @@
             }
         ?>
         <script type='text/javascript'>
-            let colors = ['red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'gray', 'brown', 'black'];
-            var selectedOptions = [];
+            let colors = ['red','orange','yellow','green','teal','blue','purple','gray','brown','black'];
+            var selected = [];
 
-            <?php for ($j = 0; $j < $numColor; $j++){?>
-                selectedOptions.push(parseInt($("#color<?=$j;?> option:selected").val()));
+            <?php for ($a = 0; $a < $numColor; $a++){?>
+                selected.push(parseInt($("#color<?=$a;?> option:selected").val()));
             <?php } ?>
             
-            <?php for ($k = 0; $k < 10; $k++){?>
-                if (selectedOptions.includes(<?=$k;?>)){
-                    $("select option[value=<?=$k;?>]").prop("disabled", true);
+            <?php for ($b = 0; $b < 10; $b++){?>
+                if (selected.includes(<?=$b;?>)){
+                    $("select option[value=<?=$b;?>]").prop("disabled", true);
                 }
             <?php } ?>
 
-            <?php for ($l = 0; $l < $numColor; $l++){?>
-                $("#color<?=$l;?> option:selected").prop("disabled", false);
+            <?php for ($c = 0; $c < $numColor; $c++){?>
+                $("#color<?=$c;?> option:selected").prop("disabled", false);
             <?php } ?>
 
             $(function(){
                 <?php
-                for($i = 0; $i < $numColor; $i++){ ?>
-                    $("#color<?=$i;?>").change(function(){
+                for($d = 0; $d < $numColor; $d++){ 
+                    ?>
+                    $("#color<?=$d;?>").change(function(){
                         $("select option").prop("disabled", false);
 
-                        for (let l = 0; l < 10; l++){ // Change all cells to right color
-                            var selectedColor = ($("#color" + l).val());
+                        for (let l = 0; l < 10; l++){ // Update cell color
+                            var selectedColor = ($("#color" + l).val()); // 
                             $(".radioCheck" + l).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + l);
                         }
 
-                        var selectedOptions = [];
-                        <?php for ($j = 0; $j < $numColor; $j++){?>
-                            selectedOptions.push(parseInt($("#color<?=$j;?> option:selected").val()));
+                        var selected = [];
+                        <?php for ($a = 0; $a < $numColor; $a++){?>
+                            selected.push(parseInt($("#color<?=$a;?> option:selected").val()));
                         <?php } ?>
                         
-                        <?php for ($k = 0; $k < 10; $k++){?>
-                            if (selectedOptions.includes(<?=$k;?>)){
-                                $("select option[value=<?=$k;?>]").prop("disabled", true);
+                        <?php for ($b = 0; $b < 10; $b++){?>
+                            if (selected.includes(<?=$b;?>)){
+                                $("select option[value=<?=$b;?>]").prop("disabled", true);
                             }
                         <?php } ?>
 
-                        <?php for ($l = 0; $l < $numColor; $l++){?>
-                            $("#color<?=$l;?> option:selected").prop("disabled", false);
+                        <?php for ($c = 0; $c < $numColor; $c++){?>
+                            $("#color<?=$c;?> option:selected").prop("disabled", false);
                         <?php } ?>
                     });
                 <?php } ?>
