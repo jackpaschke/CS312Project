@@ -5,16 +5,26 @@
 <body>
     <main>
     <style> 
-        .red {background-color: red;}
-        .orange {background-color: orange;}
-        .yellow {background-color: yellow;}
-        .green {background-color: green;}
-        .teal {background-color: teal;}
-        .blue {background-color: blue;}
-        .purple {background-color: purple;}
-        .gray {background-color: gray;}
-        .brown {background-color: brown;}
-        .black {background-color: black;}
+        .red {background-color: red;
+        }
+        .orange {background-color: orange;
+        }
+        .yellow {background-color: yellow;
+        }
+        .green {background-color: green;
+        }
+        .teal {background-color: teal;
+        }
+        .blue {background-color: blue;
+        }
+        .purple {background-color: purple;
+        }
+        .gray {background-color: gray;
+        }
+        .brown {background-color: brown;
+        }
+        .black {background-color: black;
+        }
     </style>
         <?php
             $letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
