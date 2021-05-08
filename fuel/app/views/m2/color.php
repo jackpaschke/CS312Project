@@ -19,36 +19,39 @@
         }
         .purple {background-color: purple;
         }
-        .gray {background-color: gray;
-        }
         .brown {background-color: brown;
+        }
+        .gray {background-color: gray;
         }
         .black {background-color: black;
         }
     </style>
+
         <?php
-            $letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; // Letters for coordinate grid
+            echo Asset::js(array("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"));
+
+            $letters = range('A', 'Z');
             $numColor = $rowCol = 0;
-            echo Asset::js(array("https://code.jquery.com/jquery-3.6.0.min.js"));
-            
             function buildForm($errCode){ //Create form an validate form data
                 if ($errCode == 1){ //If data out of bounds
                     echo "<p>>Number of rows and columns out of range must be [1-26}</p>";
                 }
-                $self = $_SERVER["PHP_SELF"];
+
+                $self = $_SERVER["PHP_SELF"]; //Form Variables
                 echo    "<form action = '$self' method = 'POST'>
-                <label for='rowCol'>Number of Rows and Columns:</label>
+                <label for='rowCol'># of Rows and Columns: </label>
                 <input type='text' id='rowCol' name='rowCol' required><br>
-                <label for='percent'>Number of Colors:</label>
+                <label for='percent'># of Colors: </label>
                 <input type='text' id='numColor' name='numColor' required><br><br>
                 <input type='submit' value='Submit'>
+
                 </form>";
             }
             
-            $colors = array('red','orange','yellow','green','teal','blue','purple','grey','brown','black');
-            $colorKey = array( 0 => 'red', 1 => 'orange', 2 => 'yellow', 3 => 'green', 4 => 'teal', 5 => 'blue', 6 => 'purple', 7 => 'grey', 8 => 'brown', 9 => 'black');
+            $colors = array('red','orange','yellow','green','teal','blue','purple','brown','gray','black');
+            $colorKey = array( 0 =>'red', 1 =>'orange', 2 =>'yellow', 3 =>'green', 4 =>'teal', 5 =>'blue', 6 =>'purple', 7 =>'brown', 8 =>'gray', 9 =>'black'); //For assigning colors
             
-            if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if ($_SERVER['REQUEST_METHOD']=='POST') {
                 echo "<style>
                 td {
                     width: 20px;
@@ -56,6 +59,7 @@
                     border: 1px solid black;
                     text-align: center;
                     }
+
                 table {
                     border-color: black;
                     border-style: solid;
@@ -70,7 +74,7 @@
                     $numColor = $_POST['numColor'];
                     
                     echo'<form method="post" action="print.php">';
-                    echo "<table style='width:90%'>";
+                    echo "<table style='width:80%'>";
                     for ($d = 0; $d < $numColor; $d++){
                         echo "<tr><td style='width:20%'>";
                         echo "<select name='color$d' id='color$d'>";
@@ -78,48 +82,50 @@
                                 $colorType = $colors[$a];
                                 if ($d == $a){
                                     echo "<option value='$a' selected>$colorType</option>";
-                                }else{
+                                }
+                                else{
                                     echo "<option value='$a'>$colorType</option>";
                                 }
                             }   
                         echo "</select>";
+
                         if ($d == 0){
                             echo "<input type='radio' name='colorSelect' id='radio$d' value='$d' checked>";
-                        }else{
+                        }
+                        else{
                             echo "<input type='radio' name='colorSelect' id='radio$d' value='$d'>";
                         }
-                        echo "</td><td style='width:80%' id='dataRow$d'></td></tr>";
+                        echo "</td><td style='width:80%' id='dataRow$d'></td> </tr>";
                         echo "<input type='hidden' name='dataRowForm$d' id='dataRowForm$d' value=' '>";
                     }
                     echo "</table>";
                     
                     echo "<table>";
-                    echo "<tr><td></td>";
-                    $letters = range('A', 'Z');
+                    echo "<tr><td></td>";//First Square
+                    $letters = range('A', 'Z'); //Build Axes
                     for ($a = 0; $a < $rowCol; $a++){
                         echo "<td>$letters[$a]</td>";
                     }
 
-                    for ($d = 0; $d < $rowCol; $d++){
+                    for ($d = 0; $d < $rowCol; $d++){ //Build color grid
                         echo "<tr>";
                         $val = $d+1;
-                        echo "<td>$val</td>";
+                        echo "<td> $val </td>";
+
                         for ($a = 0; $a < $rowCol; $a++){
-                            $cetter = $letters[$a];
+                            $letter = $letters[$a];
                             $number = $d+1;
-                            echo "<td name='$cetter$number' id='$d-$a' onclick='gridClick($d,$a)'></td>";
+                            echo "<td name='$letter$number' id='$d-$a' onclick='gridClick($d,$a)'></td>";
                         }
                         echo "</tr>";
                     }
                     echo "</table>";
-
-                    echo "<input type='hidden' name='test' value='b'>";
                     echo "<input type='hidden' name='numColor' value='$numColor'>";
                     echo "<input type='hidden' name='rowCol' value='$rowCol'>";
                     echo "<input type='submit' value='Print'>";
                     echo "</form>";
                 }
-                else{
+                else{ //Form data out of bounds
                     buildForm(1);
                 }
             }
@@ -129,7 +135,7 @@
         ?>
         <script type='text/javascript'>
         
-            let colors = ['red','orange','yellow','green','teal','blue','purple','gray','brown','black'];
+            let colors = ['red','orange','yellow','green','teal','blue','purple','brown','gray','black'];
             var selected = [];
 
             <?php for ($a = 0; $a < $numColor; $a++){?>
@@ -159,6 +165,7 @@
                         for (let l = 0; l < 10; l++){ // Update cell color
                             var selectedColor = ($("#color" + l).val()); // 
                             $(".radioCheck" + l).addClass(colors[selectedColor]).addClass("radioCheck" + l);
+
                         }
 
                         var selected = [];
@@ -168,8 +175,10 @@
                         ?>
                         
                         <?php for ($b = 0; $b < 10; $b++){?>
+
                             if (selected.includes(<?=$b; ?>)){
                                 $("select option[value=<?=$b; ?>]").prop("disabled", true);
+
                             }
                         <?php } 
                         ?>
@@ -182,6 +191,7 @@
                 <?php } 
                 ?>
             });
+
             function gridClick(x,y ){
 
                 var radioValue = ($('input[name = colorSelect]:checked').val());
@@ -195,8 +205,10 @@
                         values += $(this).attr("name")+", ";
                     }
                     );
+
                     $('#dataRow' + i).html(values);
                     $('#dataRowForm' + i).attr('value', values);
+
                 }
             }
         </script>
