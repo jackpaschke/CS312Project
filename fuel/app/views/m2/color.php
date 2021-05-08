@@ -69,7 +69,7 @@
                     }
                     </style>";
 
-                if ( $_POST['rowCol'] >= 1 && $_POST['rowCol'] <= 26 && $_POST['numColor'] >= 1 && $_POST['numColor'] <= 10){
+                if ( $_POST['numColor'] >= 1 && $_POST['numColor'] <= 10 && $_POST['rowCol'] >= 1 && $_POST['rowCol'] <= 26 ){
                     $rowCol = $_POST['rowCol'];
                     $numColor = $_POST['numColor'];
                     
@@ -197,7 +197,7 @@
                 var radioValue = ($('input[name = colorSelect]:checked').val());
                 var selectedColor = ($("#color" + radioValue).val());
 
-                $( "#" + x + "-" + y ).removeClass().addClass(colors[selectedColor]).addClass("radioCheck" + radioValue);
+                $( "#" + x + "-" + y ).addClass(colors[selectedColor]).addClass("radioCheck" + radioValue);
 
                 for (let i = 0; i < 10;i++){
                     var values = [];
