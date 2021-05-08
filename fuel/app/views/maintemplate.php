@@ -26,7 +26,7 @@
     </main>
     <footer>
 	<br>
-       	Created by Michael Webb, Jake Paschke, Eileen Rice for CS312
+       	Created by Michael Webb, Jack Paschke, Eileen Rice for CS312
            <br>
         <p>Copyright © 2020 Nemo Technologies</p>
     </footer>
